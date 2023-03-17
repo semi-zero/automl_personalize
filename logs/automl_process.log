@@ -1,0 +1,8 @@
+2023-03-17 16:02:32,492 automl_personalize main.py main set_logger INFO: logger 세팅
+2023-03-17 16:02:32,492 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
+2023-03-17 16:02:32,492 automl_personalize input_data.py input_data read_data INFO: storage/movie_data/interaction_data.csv
+2023-03-17 16:02:33,425 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
+2023-03-17 16:02:33,445 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 994882 행, 6열
+2023-03-17 16:02:33,446 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 45.54MB
+2023-03-17 16:02:34,553 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 54.36MB
+2023-03-17 16:02:34,554 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by -19.4%
