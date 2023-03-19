@@ -1,0 +1,90 @@
+2023-03-19 19:02:02,351 automl_personalize main.py main set_logger INFO: logger 세팅
+2023-03-19 19:02:02,352 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
+2023-03-19 19:02:02,352 automl_personalize input_data.py input_data read_data INFO: storage/movie_data/interaction_data.csv
+2023-03-19 19:02:03,328 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
+2023-03-19 19:02:03,335 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 994882 행, 6열
+2023-03-19 19:02:03,336 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 45.54MB
+2023-03-19 19:02:04,508 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 54.36MB
+2023-03-19 19:02:04,508 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by -19.4%
+2023-03-19 19:02:04,508 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 확인
+2023-03-19 19:02:04,513 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 처리 이후 데이터 구성: 994882 행, 6열
+2023-03-19 19:02:05,298 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-19 19:02:05,298 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,299 automl_personalize preprocess.py preprocess get_per_df INFO:   USER_ID ITEM_ID  EVENT_TYPE            TIMESTAMP  \
+0       1     307         3.5  2009-10-27 21:00:21   
+1       1     481         3.5  2009-10-27 21:04:16   
+2       1    1091         1.5  2009-10-27 21:04:31   
+3       1    1257         4.5  2009-10-27 21:04:20   
+4       1    1449         4.5  2009-10-27 21:01:04   
+
+                                          ITEM_NAME     CATEGORY_L1  
+0  Three Colors: Blue (Trois couleurs: Bleu) (1993)           Drama  
+1                                 Kalifornia (1993)  Drama|Thriller  
+2                        Weekend at Bernie's (1989)          Comedy  
+3                         Better Off Dead... (1985)  Comedy|Romance  
+4                        Waiting for Guffman (1996)          Comedy  
+2023-03-19 19:02:05,304 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,304 automl_personalize preprocess.py preprocess get_per_df INFO:   USER_ID
+0       1
+1       2
+2       3
+3       4
+4       5
+2023-03-19 19:02:05,305 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,305 automl_personalize preprocess.py preprocess get_per_df INFO:   ITEM_ID                                         ITEM_NAME     CATEGORY_L1
+0     307  Three Colors: Blue (Trois couleurs: Bleu) (1993)           Drama
+1     481                                 Kalifornia (1993)  Drama|Thriller
+2    1091                        Weekend at Bernie's (1989)          Comedy
+3    1257                         Better Off Dead... (1985)  Comedy|Romance
+4    1449                        Waiting for Guffman (1996)          Comedy
+2023-03-19 19:02:05,308 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,308 automl_personalize preprocess.py preprocess get_per_df INFO:   ITEM_ID USER_ID  EVENT_TYPE
+0     307       1           5
+1     481       1           5
+2    1091       1           5
+3    1257       1           5
+4    1449       1           5
+2023-03-19 19:02:05,681 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-19 19:02:05,681 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,681 automl_personalize preprocess.py preprocess get_per_df INFO:   USER_ID ITEM_ID  EVENT_TYPE            TIMESTAMP  \
+0       1     307         3.5  2009-10-27 21:00:21   
+1       1     481         3.5  2009-10-27 21:04:16   
+2       1    1091         1.5  2009-10-27 21:04:31   
+3       1    1257         4.5  2009-10-27 21:04:20   
+4       1    1449         4.5  2009-10-27 21:01:04   
+
+                                          ITEM_NAME     CATEGORY_L1  
+0  Three Colors: Blue (Trois couleurs: Bleu) (1993)           Drama  
+1                                 Kalifornia (1993)  Drama|Thriller  
+2                        Weekend at Bernie's (1989)          Comedy  
+3                         Better Off Dead... (1985)  Comedy|Romance  
+4                        Waiting for Guffman (1996)          Comedy  
+2023-03-19 19:02:05,685 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,685 automl_personalize preprocess.py preprocess get_per_df INFO:   USER_ID
+0       1
+1       2
+2       3
+3       4
+4       5
+2023-03-19 19:02:05,686 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,686 automl_personalize preprocess.py preprocess get_per_df INFO:   ITEM_ID                                         ITEM_NAME     CATEGORY_L1
+0     307  Three Colors: Blue (Trois couleurs: Bleu) (1993)           Drama
+1     481                                 Kalifornia (1993)  Drama|Thriller
+2    1091                        Weekend at Bernie's (1989)          Comedy
+3    1257                         Better Off Dead... (1985)  Comedy|Romance
+4    1449                        Waiting for Guffman (1996)          Comedy
+2023-03-19 19:02:05,690 automl_personalize preprocess.py preprocess get_per_df INFO: 
+
+2023-03-19 19:02:05,691 automl_personalize preprocess.py preprocess get_per_df INFO:   ITEM_ID USER_ID  EVENT_TYPE
+0     307       1           5
+1     481       1           5
+2    1091       1           5
+3    1257       1           5
+4    1449       1           5
