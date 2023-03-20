@@ -64,12 +64,12 @@ class Modeling:
        
         #학습 결과 화면을 위한 함수들
         #1. 분석 리포트
-        self.report = self.make_report(self.user_id_var, self.item_id_var, self.start_time)
+        self.report = self.make_report(self.user_id_var, self.item_id_var, self.model_type, self.start_time)
         
         
         #2. 학습 결과 비교 화면
         #3. 변수 중요도
-        self.test_score, self.valid_score, self.user_item_df, self.recommendations_df, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_df, self.recommendations_df, self.pop_recommend_df)
+        self.test_score, self.valid_score, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df)
         
         
         #self.to_result_page()
@@ -305,7 +305,8 @@ class Modeling:
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
             accuracy_df = pd.DataFrame(dict_list)
             return accuracy_df, user_item_dfs, recommend_dfs
-        self.accuracy_df, self.user_item_df, self.recommendations_df = perf_metric(user_df, item_df, interaction_df, num = 10) 
+        
+        self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(user_df, item_df, interaction_df, num = 10) 
 
         self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
         self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
@@ -317,7 +318,7 @@ class Modeling:
         
     
     #def make_report(self, target, model_type, over_sampling, hpo, start_time):
-    def make_report(self, user_id_var, item_id_var, start_time):
+    def make_report(self, user_id_var, item_id_var, model_type, start_time):
                     
         self.logger.info('학습 결과를 위한 결과물 생성')
         try:
@@ -331,9 +332,7 @@ class Modeling:
                                    '데이터 분할' : '80/20',
                                    '알고리즘' : model_type, 
                                    '목표' : '추천',
-                                   '최적화 목표' : 'RMSE',
-                                   '불균형 처리 여부' : over_sampling,
-                                   'HPO 여부' : hpo})
+                                   '최적화 목표' : 'RMSE'})
                                     #hpo여부도 필요
             report = report.T
         
@@ -342,13 +341,14 @@ class Modeling:
             
         return report
     
-    def get_eval(self, accuracy_df, user_item_df, recommendations_df, pop_recommend_df):
+    def get_eval(self, accuracy_df, user_item_dfs, recommend_dfs, pop_recommend_df):
         
         self.logger.info('best 모델 검증')
         
         try:
-            test_score = pd.DataFrame({'Precision@K' : self.score[f'Precision@{self.num}'],
-                                       'Recall@K'    : self.score[f'Recall@{self.num}']})
+            
+            test_score = pd.DataFrame({'Precision@K' : [ self.score[f'Precision@{self.num}'] ],
+                                       'Recall@K'    : [ self.score[f'Recall@{self.num}']]})
         
                                        
         except:
@@ -357,4 +357,4 @@ class Modeling:
         valid_score = pd.DataFrame(self.score)
     
         
-        return test_score, valid_score, user_item_df, recommendations_df, pop_recommend_df
+        return test_score, valid_score, user_item_dfs, recommend_dfs, pop_recommend_df
