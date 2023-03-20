@@ -1,17 +1,38 @@
-2023-03-19 23:06:38,406 automl_personalize main.py main set_logger INFO: logger 세팅
-2023-03-19 23:06:38,407 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
-2023-03-19 23:06:38,407 automl_personalize input_data.py input_data read_data INFO: storage/shop_data/interaction_data.csv
-2023-03-19 23:06:39,369 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
-2023-03-19 23:06:39,375 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 587719 행, 13열
-2023-03-19 23:06:39,375 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 58.29MB
-2023-03-19 23:06:40,021 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 23.13MB
-2023-03-19 23:06:40,021 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by 60.3%
-2023-03-19 23:06:40,022 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 확인
-2023-03-19 23:06:40,026 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 처리 이후 데이터 구성: 587719 행, 13열
-2023-03-19 23:06:40,493 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
-2023-03-19 23:06:40,493 automl_personalize preprocess.py preprocess get_per_df INFO: 
+2023-03-20 13:56:10,097 automl_personalize main.py main set_logger INFO: logger 세팅
+2023-03-20 13:56:10,098 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
+2023-03-20 13:56:10,098 automl_personalize input_data.py input_data read_data INFO: storage/shop_data/interaction_data.csv
+2023-03-20 13:56:12,299 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
+2023-03-20 13:56:12,332 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 587719 행, 13열
+2023-03-20 13:56:12,333 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 58.29MB
+2023-03-20 13:56:14,280 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 23.13MB
+2023-03-20 13:56:14,283 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by 60.3%
+2023-03-20 13:56:14,285 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 확인
+2023-03-20 13:56:14,295 automl_personalize preprocess.py preprocess na_preprocess ERROR: 결측치 처리에 문제가 발생하였습니다
+Traceback (most recent call last):
+  File "C:\Users\LDCC\Desktop\eco_code\automl_personalize\process\preprocess.py", line 35, in na_preprocess
+    df.fillna('NaN', inplace=True)
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\frame.py", line 5182, in fillna
+    downcast=downcast,
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\generic.py", line 6383, in fillna
+    value=value, limit=limit, inplace=inplace, downcast=downcast
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\internals\managers.py", line 411, in fillna
+    "fillna", value=value, limit=limit, inplace=inplace, downcast=downcast
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\internals\managers.py", line 327, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\internals\blocks.py", line 1572, in fillna
+    values = self.values.fillna(value=value, limit=limit)
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\arrays\_mixins.py", line 246, in fillna
+    self._validate_setitem_value(value)
+  File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\arrays\categorical.py", line 2045, in _validate_setitem_value
+    "Cannot setitem on a Categorical with a new "
+ValueError: Cannot setitem on a Categorical with a new category, set the categories first
+2023-03-20 13:56:14,351 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 처리 이후 데이터 구성: 587719 행, 13열
+2023-03-20 13:56:15,855 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-20 13:56:15,856 automl_personalize preprocess.py preprocess get_per_df INFO: 
 
-2023-03-19 23:06:40,493 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
+2023-03-20 13:56:15,857 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
 0  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 1  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 2  dc073623-4b95-47d9-93cb-0171c20baa04     332       View   
@@ -38,10 +59,10 @@
 2  132.0  
 3  132.0  
 4  210.0  
-2023-03-19 23:06:40,775 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
-2023-03-19 23:06:40,775 automl_personalize preprocess.py preprocess get_per_df INFO: 
+2023-03-20 13:56:16,277 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-20 13:56:16,278 automl_personalize preprocess.py preprocess get_per_df INFO: 
 
-2023-03-19 23:06:40,776 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
+2023-03-20 13:56:16,279 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
 0  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 1  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 2  dc073623-4b95-47d9-93cb-0171c20baa04     332       View   

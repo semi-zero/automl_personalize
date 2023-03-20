@@ -64,11 +64,12 @@ class Modeling:
        
         #학습 결과 화면을 위한 함수들
         #1. 분석 리포트
-        #self.report = self.make_report(self.user_id_var, self.item_id_var, self.start_time)
+        self.report = self.make_report(self.user_id_var, self.item_id_var, self.start_time)
+        
         
         #2. 학습 결과 비교 화면
         #3. 변수 중요도
-        #self.test_score, self.valid_score, self.fi = self.get_eval(self.best_model_name, self.best_model, self.best_test, self.ori_df, self.unique_id, self.target)
+        self.test_score, self.valid_score, self.user_item_df, self.recommendations_df, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_df, self.recommendations_df, self.pop_recommend_df)
         
         
         #self.to_result_page()
@@ -162,15 +163,15 @@ class Modeling:
             accuracy_df = pd.DataFrame(dict_list)
             return accuracy_df, user_item_dfs, recommend_dfs
         
-        accuracy_df, user_item_dfs, recommend_dfs = perf_metric(preds_df, item_df, interaction_df, num)
+        self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(preds_df, item_df, interaction_df, num)
         
         
-        self.score[f'Precision@{self.num}']  = np.round(np.mean(accuracy_df[f'precision@{num}']),3)
-        self.score[f'Recall@{self.num}']     = np.round(np.mean(accuracy_df[f'recall@{num}']),3)
+        self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
+        self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
         
         print(self.score)
-        user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
-        recommend_dfs.to_csv('storage/recommend_dfs.csv', index=False)
+        self.user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
+        self.recommend_dfs.to_csv('storage/recommend_dfs.csv', index=False)
         
         #################### SVD FINISH####################
         
@@ -202,8 +203,8 @@ class Modeling:
 
             pop_list = pop_df.sample(n=num, weights='weight')[item_id_var].tolist()
 
-        pop_recommend_df = item_df[item_df[item_id_var].isin(pop_list)]
-        pop_recommend_df.to_csv('storage/pop_recommend_df.csv', index=False)
+        self.pop_recommend_df = item_df[item_df[item_id_var].isin(pop_list)]
+        self.pop_recommend_df.to_csv('storage/pop_recommend_df.csv', index=False)
        
             
       #################### POP START####################
@@ -213,11 +214,11 @@ class Modeling:
         
     def auto_process(self):
         if self.model_type == 'auto': 
-            self.auto_fit_predict(self.interaction_df, self.item_df, self.item_id_var, self.user_id_var, self.event, self.num)
+            self.auto_fit_predict(self.interaction_df, self.user_df, self.item_df, self.item_id_var, self.user_id_var, self.event, self.num)
 
 
     #모델 fit
-    def auto_fit_predict(self, interaction_df, item_df, item_id_var, user_id_var, event, num):
+    def auto_fit_predict(self, interaction_df, user_df, item_df, item_id_var, user_id_var, event, num):
         
         rating_min = 0.5
         rating_max = np.max(interaction_df[event].values)
@@ -226,10 +227,10 @@ class Modeling:
         df = Dataset.load_from_df(interaction_df[[user_id_var, item_id_var, event]], reader = reader)
         train, test = train_test_split(df, test_size = 0.2, random_state=42)
 
-        algorithms = {'base': BaselineOnly()} 
-                     #'knn' : KNNWithMeans(), 
-                     #'svd' : SVD(), 
-                     #'svdpp' :SVDpp()}
+        algorithms = {'base': BaselineOnly()}
+                     #,'knn' : KNNWithMeans() 
+                     #,'svd' : SVD()} 
+                     #,'svdpp' :SVDpp()}
                     
         for algo_name, algo in zip(algorithms.keys(), algorithms.values()):
             algo.fit(train)
@@ -280,7 +281,7 @@ class Modeling:
             recommend_dfs = pd.DataFrame()
             dict_list = []
             for USER_ID in tqdm.tqdm(user_df[user_id_var].values):
-            #for USER_ID in tqdm.tqdm(['1']): #,'2','3','4']):
+                
                 preds_df = item_df.copy()
                 preds_df.loc[:, user_id_var] = USER_ID
                 #preds_df 계산
@@ -304,14 +305,14 @@ class Modeling:
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
             accuracy_df = pd.DataFrame(dict_list)
             return accuracy_df, user_item_dfs, recommend_dfs
-        accuracy_df, user_item_df, recommendations_df = perf_metric(user_df, item_df, interaction_df, num = 10) 
+        self.accuracy_df, self.user_item_df, self.recommendations_df = perf_metric(user_df, item_df, interaction_df, num = 10) 
 
-        self.score[f'Precision@{self.num}']  = np.round(np.mean(accuracy_df[f'precision@{num}']),3)
-        self.score[f'Recall@{self.num}']     = np.round(np.mean(accuracy_df[f'recall@{num}']),3)
+        self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
+        self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
         
         print(self.score)
-        user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
-        recommend_dfs.to_csv('storage/recommend_dfs.csv', index=False)
+        self.user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
+        self.recommend_dfs.to_csv('storage/recommend_dfs.csv', index=False)
     #################### Auto Finish####################    
         
     
@@ -321,9 +322,9 @@ class Modeling:
         self.logger.info('학습 결과를 위한 결과물 생성')
         try:
             report = pd.DataFrame({'상태' : '완료됨',
-                                  '모델 ID' : ['model_id'],
-                                  '생성 시각': [start_time.strftime('%Y-%m-%d %H:%M:%S')],
-                                  '학습 시간' : [datetime.datetime.now()-start_time],
+                                   '모델 ID' : ['model_id'],
+                                   '생성 시각': [start_time.strftime('%Y-%m-%d %H:%M:%S')],
+                                   '학습 시간' : [datetime.datetime.now()-start_time],
                                    '데이터셋 ID' : 'dataset_id',
                                    '사용자 변수' : user_id_var,
                                    '상품 변수' : item_id_var,
@@ -340,3 +341,20 @@ class Modeling:
             self.logger.exception('학습 결과를 위한 결과물 생성 실패했습니다')
             
         return report
+    
+    def get_eval(self, accuracy_df, user_item_df, recommendations_df, pop_recommend_df):
+        
+        self.logger.info('best 모델 검증')
+        
+        try:
+            test_score = pd.DataFrame({'Precision@K' : self.score[f'Precision@{self.num}'],
+                                       'Recall@K'    : self.score[f'Recall@{self.num}']})
+        
+                                       
+        except:
+            self.logger.exception('best 모델 검증에 실패했습니다')
+       
+        valid_score = pd.DataFrame(self.score)
+    
+        
+        return test_score, valid_score, user_item_df, recommendations_df, pop_recommend_df
