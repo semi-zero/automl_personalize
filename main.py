@@ -56,6 +56,6 @@ if __name__ == "__main__":
     
     
     # 입력 예시
-    # python main.py -pth storage/movie_data/interaction_data.csv -item_id ITEM_ID -user_id USER_ID -event EVENT_TYPE -num 10 -user_var  -item_var ITEM_NAME CATEGORY_L1 --model_type auto
+    # python main.py -pth storage/movie_data/interaction_data.csv -item_id ITEM_ID -user_id USER_ID -event EVENT_TYPE -num 10 -item_var ITEM_NAME CATEGORY_L1 --model_type auto
     # python main.py -pth storage/shop_data/interaction_data.csv -item_id ITEM_ID -user_id USER_ID -event EVENT_TYPE -num 10 -user_var USER_NAME AGE -item_var ITEM_NAME CATEGORY_L1 --model_type auto
     

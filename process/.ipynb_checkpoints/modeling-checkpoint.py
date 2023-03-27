@@ -52,7 +52,7 @@ class Modeling:
         self.score[f'Precision@{self.num}']     = dict()
         self.score[f'Recall@{self.num}']        = dict()
         self.score['RMSE']                      = dict()
-        
+        self.score['MAE']                       = dict()
         
         
         #모델링 딕셔너리
@@ -60,7 +60,6 @@ class Modeling:
                            'pop'  : self.pop_process(),
                            'auto'  : self.auto_process()}
         
-        #self.best_model_name, self.best_model, self.best_test = self.get_best_model()
        
         #학습 결과 화면을 위한 함수들
         #1. 분석 리포트
@@ -71,8 +70,6 @@ class Modeling:
         #3. 변수 중요도
         self.test_score, self.valid_score, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df)
         
-        
-        #self.to_result_page()
         
         
         #################### SVD START####################
@@ -161,6 +158,9 @@ class Modeling:
                 recommend_df.loc[:, user_id_var] = USER_ID
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
             accuracy_df = pd.DataFrame(dict_list)
+            user_item_dfs.reset_index(drop=True, inplace=True)
+            recommend_dfs.reset_index(drop=True, inplace=True)
+            
             return accuracy_df, user_item_dfs, recommend_dfs
         
         self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(preds_df, item_df, interaction_df, num)
@@ -227,15 +227,16 @@ class Modeling:
         df = Dataset.load_from_df(interaction_df[[user_id_var, item_id_var, event]], reader = reader)
         train, test = train_test_split(df, test_size = 0.2, random_state=42)
 
-        algorithms = {'base': BaselineOnly()}
-                     #,'knn' : KNNWithMeans() 
-                     #,'svd' : SVD()} 
-                     #,'svdpp' :SVDpp()}
+        algorithms = {'item_based': KNNWithMeans(sim_options = {"user_based": False}),
+                      'user_based': KNNWithMeans(sim_options = {"user_based": True}),
+                      'CF': SVD()}
+
                     
         for algo_name, algo in zip(algorithms.keys(), algorithms.values()):
             algo.fit(train)
             predictions = algo.test(test)
             self.score['RMSE'][algo_name] = np.round(accuracy.rmse(predictions) , 3)
+            self.score['MAE'][algo_name] = np.round(accuracy.mae(predictions) , 3)
             self.model[algo_name] = algo
         
         best_model_name = min(self.score['RMSE'], key = self.score['RMSE'].get)
@@ -304,12 +305,16 @@ class Modeling:
                 recommend_df.loc[:, user_id_var] = USER_ID
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
             accuracy_df = pd.DataFrame(dict_list)
+            
+            user_item_dfs.reset_index(drop=True, inplace=True)
+            recommend_dfs.reset_index(drop=True, inplace=True)
             return accuracy_df, user_item_dfs, recommend_dfs
         
         self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(user_df, item_df, interaction_df, num = 10) 
 
         self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
         self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
+        
         
         print(self.score)
         self.user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
@@ -347,14 +352,17 @@ class Modeling:
         
         try:
             
-            test_score = pd.DataFrame({'Precision@K' : [ self.score[f'Precision@{self.num}'] ],
-                                       'Recall@K'    : [ self.score[f'Recall@{self.num}']]})
+            test_score = pd.DataFrame({f'Precision@{self.num}' : [ self.score[f'Precision@{self.num}'] ],
+                                       f'Recall@{self.num}'    : [ self.score[f'Recall@{self.num}']]})
         
                                        
         except:
             self.logger.exception('best 모델 검증에 실패했습니다')
        
         valid_score = pd.DataFrame(self.score)
+        valid_score = valid_score[['RMSE','MAE']]
+        valid_score.reset_index(inplace=True)
+        valid_score.to_csv('storage/vald.csv', index=False)
     
         
         return test_score, valid_score, user_item_dfs, recommend_dfs, pop_recommend_df

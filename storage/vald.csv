@@ -1,0 +1,4 @@
+index,RMSE,MAE
+item_based,0.0,0.0
+user_based,0.0,0.0
+CF,0.015,0.007
