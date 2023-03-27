@@ -1,0 +1,120 @@
+ITEM_ID,ITEM_NAME,CATEGORY_L1,USER_ID
+ad8938c6-c44a-47f8-a8d9-1627ee82030d,Ultrachic Necklace,jewelry,1175
+d2b346a1-b4a6-418a-a568-0b94f09b5f26,Midnight Blue Sneakers,footwear,1175
+096534d1-ec28-4b3d-9b51-7feaa6aa5abc,White Heels,footwear,1175
+101e4a54-17d9-4e51-a6fa-53bc5abc141a,Dark Red Shoes,footwear,1175
+13166277-206b-4838-940c-6a18463dd1ab,Thistle-Purple Shoes,footwear,1175
+5cf1825f-b9e9-4168-a4a7-ac516733417c,Brown Shoes,footwear,1175
+ff47435d-97d2-4d05-b3e8-294d4c47cbc3,Dark Gray Worktable,furniture,1175
+e6009e07-6e23-48f7-8085-426f1d466c79,White Worktable,furniture,1175
+df8e287c-867b-4b4d-bf27-e3055afa2a16,Dark Khaki Work Table,furniture,1175
+5b8e7e76-98ec-48bc-9afd-b84bb8cacfe5,White Dining Chair,furniture,1175
+3f791530-9540-4a36-9838-4fb14fc247ae,Edgy Earrings,jewelry,1175
+d68859fc-b3ad-4ca9-9e83-f105fb09b2cf,Sublime Necklace,jewelry,1175
+40661057-b318-4fc9-bf00-8a1ab1b3c3cb,Groovy Belt,accessories,3240
+5af0136a-862b-42fa-a127-958a8bbd2167,Funky Glasses,accessories,3240
+a3ad25e8-c9c3-459a-a853-c26a0ad837eb,Gainsboro Backpack,accessories,3240
+e53a6570-3a3f-4ca8-b6dc-8ff378bca757,Visit Sweden,books,3240
+a9d6ceb2-92da-4523-af26-8df87ca7569f,Asparagus,groceries,3240
+547c307d-f756-4e69-af71-897352247169,Avocado,groceries,3240
+1168b59f-b1e3-45bf-b7bc-fd1daf349482,Watermelon,groceries,3240
+5723f368-aae1-4504-b5b6-3efbc47497cc,Grapes,groceries,3240
+81c4df40-9efb-4d78-b52f-9820ae975875,Fashionable Glasses,accessories,3240
+0c47dade-1ec0-483a-9ab4-1b87604bdaf8,Pink Backpack,accessories,3240
+0cb50483-3682-4db5-870c-2b007b2c08b6,Blueberries,groceries,3240
+308e1a70-e10e-4f27-a923-5f1ac5d3c5d7,Blue Suit,apparel,2072
+cb70731b-cf70-437b-bb3d-9142323f61db,Platform Heels,footwear,2072
+40661057-b318-4fc9-bf00-8a1ab1b3c3cb,Groovy Belt,accessories,2072
+36543d2c-e485-4822-9dfa-ee0fc4b2db0e,Black Heels,footwear,2072
+9256691b-aafe-4771-8759-0a52dc29d819,Edgy Sandals,footwear,2072
+5cf1825f-b9e9-4168-a4a7-ac516733417c,Brown Shoes,footwear,2072
+81c4df40-9efb-4d78-b52f-9820ae975875,Fashionable Glasses,accessories,2072
+2cc89e77-685d-423c-80a9-82e07ea13b7c,Dark Slate Gray Backpack,accessories,2072
+53014964-755a-4cf6-9f6c-5c917773e3c9,Swanky Scarf,apparel,2072
+0eceb1b4-30c6-4ce8-bd60-d4208ceb7acb,Gainsboro Shirt,apparel,2072
+17d2050f-19c4-4cf9-bf10-a83421f0052d,Sublime Scarf,apparel,2072
+1de0c711-042b-4b47-93d9-3a7d8d969ac6,Firebrick Jacket,apparel,2072
+8b2a170c-e2e9-4d94-ae1a-994114ac11a5,Trendy Belt,accessories,2072
+26f3ac16-179b-4886-8ace-e9e83855e86b,Swell Necklace,jewelry,2088
+59bb3cc4-9757-49a0-ac62-8c0afe105a3d,Indoor Plant,floral,2088
+aa67955f-aea0-48e5-b819-5eae313d949f,Drought-Resistant Indoor Plant,floral,2088
+93cb359c-94a9-4ff9-937b-b059506ba77d,Trendy Necklace,jewelry,2088
+d78a318a-ca96-4bb3-9f9f-90847b105f2a,Scrub Ball,beauty,2088
+168b7d52-7dbf-4f73-987b-d0fe181f778a,Fall Wreath,floral,2088
+92067f9f-5a9d-42c3-9aad-4e6d9c4f596a,Roses Arrangement,floral,2088
+83095a08-2968-4275-a375-4fab404df7ac,Razor,beauty,2088
+9b149680-3368-4ae0-8f71-9a21d111b8dc,Dandyish Earrings,jewelry,2088
+e9daa7cd-8230-4544-9f07-86fa84d7c3c1,Cool Bracelet,jewelry,2088
+c62defb8-4cbd-4edb-8478-913613e77601,Indoor Plant,floral,2088
+9880afd7-f698-4a2c-929f-a9ce9be00d2b,Faultless Microphone,instruments,194
+b2d729d1-5aef-4dbf-bdf5-6d99c6e86e12,Upright Piano,instruments,194
+54b6faaf-c7fd-4abc-83b1-eaf7979f46f6,Electric Guitar,instruments,194
+2dc771b7-69ed-45d4-9a60-ce9f83ac25a4,Japanese Cuisine,books,194
+55988ddb-e48f-4cb0-9474-93c4abba4f0f,Camera,electronics,194
+23aa70ab-959f-4835-a114-c30ff5e4f974,Accurate Headphones,electronics,194
+31eef6b5-781e-4353-a851-d73ff9c22f9a,Chinese Cuisine,books,194
+4b86c44c-547e-4e54-bd16-b96d91875e4a,Computer Keyboard,electronics,194
+95be8b94-feeb-48df-8449-34924e4d849d,Faultless Microphone,instruments,194
+11b0f9f3-2c70-4c31-a6ed-a3b51799ae0b,Acoustic Bass,instruments,194
+baa15dc9-30dc-445e-9670-c6ca7455367c,Bagels,groceries,733
+3fa257ab-5c4c-4963-941f-bc73bafc8bff,Squash,groceries,733
+e65ad5b5-6860-4444-b873-9368c49cf30c,Plier,tools,733
+370e97e4-d355-4e01-a1c3-e3ffdd696ec4,Christmas Ornament,seasonal,733
+18ecf2a3-198d-4994-afba-dee116bd0a41,Christmas Ornament,seasonal,733
+8bd15036-f082-47a1-8ffb-aa193b58d960,Cheese,groceries,733
+382f9988-bdc2-42f8-a657-3ad75fd6640c,Valentine Candies,seasonal,733
+0f564ecb-1567-4efd-a4f2-6370c62e64ba,Christmas Decor,seasonal,733
+c26266b9-e809-4543-a6e2-b70a56b4c362,Apple Pie,groceries,733
+61b1ad14-4e70-4029-ba55-d17bbf4ab62b,Christmas Ornament,seasonal,733
+0016fde3-0910-4cc1-8ef6-90e15f271073,Farmed Salmon For Sushi,groceries,4734
+e61935e9-bfd3-4ea7-81a0-3212f542b18a,Beef,groceries,4734
+e41fe9b4-db67-4726-9624-335e01098abb,Trendy Glasses,accessories,4734
+bb7d8938-2183-4556-a6af-c3761c094711,Yellown Backpack,accessories,4734
+f9a481fc-b635-416b-83da-ea944f206a6d,Black Backpack,accessories,4734
+f35ae4b4-b1ac-4c95-ac58-d66f7158680e,Ultracool Glasses,accessories,4734
+a52f4cd6-4eec-43f5-899e-4abe8e1963e5,Cheese,groceries,4734
+55726766-f273-405b-b90c-c339a0d9609a,Groovy Glasses,accessories,4734
+e50a3585-a7be-4481-a4bb-4769a6066c91,Beef,groceries,4734
+060ed40f-91cb-4bd5-a0fc-36f7351d2221,Bananas,groceries,4734
+69f506f5-61ae-4a62-8e65-8a41386c1995,Dandyish Bracelet,jewelry,965
+e588910b-a9fb-4717-a2c0-5c476505b5d2,Wedding Wreath,floral,965
+a289ca2c-0135-4864-a710-865d4cf604d8,Groovy Bracelet,jewelry,965
+4994caee-f0b7-4ce8-a4df-d542ce1d9bda,Rich Soap,beauty,965
+f99e3fe4-6d50-470b-9925-6801020b262a,Hair Clipper,beauty,965
+63074efc-388e-4505-b984-5b25a4441299,Sublime Soap,beauty,965
+92067f9f-5a9d-42c3-9aad-4e6d9c4f596a,Roses Arrangement,floral,965
+fe96a096-a0b6-4b20-a332-e11db6c0c7b0,Soft Towel,beauty,965
+1db377d7-b12b-4e5a-88b1-c73ce1e2d020,hip Necklace,jewelry,965
+0c4744e2-b989-4509-a7e2-7d8dc43ff404,Drought-Resistant Indoor Plant,floral,965
+e9564c87-1af5-49d0-8ef2-4522e6d0f2c6,Drought-Resistant Indoor Plant,floral,965
+630afa5c-6c7b-4c22-b002-90b5beae3696,Centerpiece,floral,965
+aad9fe48-92f9-4197-af5a-505a80316c8c,dandyish Earrings,jewelry,965
+5858c342-2d79-4abe-91b4-d794c16b96d1,Nice Towel,beauty,965
+1f8f1c68-aecd-4af0-adc2-965e09d91a84,Accurate Microphone,instruments,2681
+d4cf35dd-b543-4b4f-9efb-c2de473c3fed,Swell Belt,accessories,2681
+3b7f5d4a-fa55-4a8d-a569-1e1f84462112,Electric Bass,instruments,2681
+54b6faaf-c7fd-4abc-83b1-eaf7979f46f6,Electric Guitar,instruments,2681
+c16068f6-8f02-4d52-9680-bfe0c75e68ac,Violin,instruments,2681
+4994caee-f0b7-4ce8-a4df-d542ce1d9bda,Rich Soap,beauty,2681
+f99e3fe4-6d50-470b-9925-6801020b262a,Hair Clipper,beauty,2681
+90399dec-acd9-4080-a905-c9421058d404,Electric Guitar,instruments,2681
+63074efc-388e-4505-b984-5b25a4441299,Sublime Soap,beauty,2681
+90074fe9-2a80-4247-86b0-12211cf024dd,Hip Glasses,accessories,2681
+692ce7b7-54ec-422e-b40f-cd9967475263,Lip Balm,beauty,2681
+d5999799-b6c1-45cf-8d5a-eaa8406a5409,Blue Backpack,accessories,2681
+6d5b3f03-ade6-42f7-969d-acd1f2162332,Razor,beauty,2681
+2cc89e77-685d-423c-80a9-82e07ea13b7c,Dark Slate Gray Backpack,accessories,2681
+4e44c0c1-40d0-43dd-a7fb-8454d779296d,Leather Handbag,accessories,2681
+710d86b7-71d6-4acc-973f-443f3ffbc812,Drought-Resistant Indoor Plant,floral,2546
+a56308af-abd2-41a0-9cf3-b4a040fd8d3f,Easter Chocolate Egg,seasonal,2546
+d5df83a8-d974-4eb6-bdb8-c8e1f3a14c64,Classy Ceramic Bowl,housewares,2546
+e1d2ec50-2970-43be-aeb7-fc90779086b7,Wedding Bouquet,floral,2546
+5b53ab8d-701c-4139-bdab-dc457e546157,Wedding Bouquet,floral,2546
+f48751db-ecd5-4e3c-9fef-82d45c4cf51a,Christmas Figurines,seasonal,2546
+89c4eeb4-c146-4434-a9f1-6943b4b552dc,Roses Arrangement,floral,2546
+8f8f015a-4166-4e9e-ac0b-6d980614ca5d,Christmas Ornament,seasonal,2546
+1d21572e-f35d-4c7b-8a39-a4d97b08276a,Pot,housewares,2546
+6d0ba711-5810-4439-875d-3db9ead666b8,Drought-Resistant Indoor Plant,floral,2546
+05f4f79c-e6d1-4c31-bcfe-44d7e77fcb68,Strainer,housewares,2546
+98330a26-c51c-451e-8caa-911a8c7abf26,Exquisite Ceramic Bowl,housewares,2546
+d091c586-5c5b-440a-8919-a9a76989992c,Refined Ceramic Bowl,housewares,2546

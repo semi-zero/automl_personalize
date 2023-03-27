@@ -1,0 +1,101 @@
+ITEM_ID,ITEM_NAME,CATEGORY_L1,USER_ID
+24f8ba65-f4e1-4cd1-8a6e-cb3ea490890a,Brown Boots,footwear,1175
+ca25b000-2e61-4d1d-b4f5-02263bb3e93f,Nude Heels,footwear,1175
+54dc5dd9-3df4-410a-ae55-54844988a0ca,Dog Accessory,outdoors,1175
+059bd8bd-e3ac-423b-9b2d-0743589ba39b,White Heels,footwear,1175
+336ab80b-95c7-4290-97cb-f4d7744cc26e,Light Gray Sneakers,footwear,1175
+32bc7c48-685e-4029-809e-6cfee53a83e9,White Heels,footwear,1175
+fee00f2f-e2cf-466f-86e9-f67d0c1ec26c,Pink And Green Sneakers,footwear,1175
+0b7cbd19-b968-47c5-87c8-e0f34b001e6e,Blue Sneakers,footwear,1175
+65e1842f-0cbf-4a8a-a30e-b5de1e2b6bcd,Supercool Sandals,footwear,1175
+fb25a396-0a15-4a43-816c-ba79cad09621,Sparkly Heels,footwear,1175
+1513d9f0-bb81-4b0c-bab5-20e8ea67c104,Toothbrush,beauty,3240
+1dddc877-52ac-480c-b786-2dbd2be70c04,Visit Iceland,books,3240
+e093925f-ea8c-4409-a00f-3d725cc463fb,Swedish Cuisine,books,3240
+4f9e1247-5342-4a79-ae6d-e53d083840a8,Visit Britain,books,3240
+4adabef5-293b-42c0-b6d1-1cf853f6391d,Visit China,books,3240
+a7aeba8c-1feb-4f9c-94d8-031612c55fb8,Visit Russia,books,3240
+ab228b40-f692-4662-9986-6d8184dda20b,Beauty Balm,beauty,3240
+4f13bb6a-20f0-4067-a33d-6585b3cd26f2,Chinese Cuisine,books,3240
+5e1679f5-2a52-44be-8453-760bf61d43b4,French Cuisine,books,3240
+fd34b35b-de76-496e-89f1-6ef65969e1a4,Visit Mexico,books,3240
+1811c348-a164-4305-97e2-bd0427074f30,Cute Dress,apparel,2072
+4f9e1247-5342-4a79-ae6d-e53d083840a8,Visit Britain,books,2072
+4509f2ec-2ed9-4906-ab6c-97f8f945defb,Dark Slate Gray Jacket,apparel,2072
+d37f2c71-3ed8-4b5c-b65d-06bb3ca69943,Checkered Shirt,apparel,2072
+7397bcf5-06c0-4aee-922f-8d111c10e090,Strappy Heels,footwear,2072
+2dc771b7-69ed-45d4-9a60-ce9f83ac25a4,Japanese Cuisine,books,2072
+23e77743-ff28-400a-811f-e08d3cab5e45,Ultrachic Scarf,apparel,2072
+6fc26dd9-832e-449e-88f5-b7e3e79e4a4a,Sassy Socks,apparel,2072
+57aaa8c6-e8ba-4128-b3c6-daac8d023624,First-rate Socks,apparel,2072
+9cc46ed9-287c-4ce8-bdb5-8e1fed177dd5,Italian Cuisine,books,2072
+642a675e-49e1-477a-97d8-6852380988b2,Dandyish Bracelet,jewelry,2088
+26744e55-7e27-4192-be27-af96c812fd3e,Massage Oil,beauty,2088
+b3ac3191-20ee-491c-8a24-42e0889152ef,Toothbrush,beauty,2088
+5d697560-14a3-4e76-8a3a-5e5c5b5b3353,Steel Scissors,beauty,2088
+afdd9c41-2762-45bf-b6a7-e3fb8f1b34ba,Minimalistic Razor,beauty,2088
+1db377d7-b12b-4e5a-88b1-c73ce1e2d020,hip Necklace,jewelry,2088
+c4a3ded4-0004-49dd-9f98-542bb6d71f2c,Groovy Earrings,jewelry,2088
+5449ebf6-1579-4fdc-8e02-7f631d2cdfbd,Toothbrush,beauty,2088
+d58cc491-e8ad-4f31-b6d5-4bcf417b40bd,Ultracool Necklace,jewelry,2088
+641f3960-72a7-4e2b-be69-8a7539eb50bb,Lotion,beauty,2088
+b55e794f-1137-4de2-bcea-806041e080e6,Visit China,books,194
+2a372402-5ea1-42cb-b374-0f6c10200fcc,Visit Greece,books,194
+589823cc-89f2-4bd5-8cab-e89478f530ea,Thai Cuisine,books,194
+7ef35f21-5d7d-4608-a3ea-63252c3ceaeb,Camera,electronics,194
+c0abd282-4bc0-4bbd-936a-9b5ad0c2eeb7,Practical Cable,electronics,194
+ac099a60-9187-4d4f-97b4-6bdfb14ba521,Visit Iceland,books,194
+62206a61-b821-47ea-be0c-c4fbf57e091e,Visit Mexico,books,194
+b740e07e-f890-4ace-8c97-4dc4cf1d173b,French Cuisine,books,194
+a228856e-ed94-48e3-9af3-575d20565bde,Turkish Cuisine,books,194
+9cc46ed9-287c-4ce8-bdb5-8e1fed177dd5,Italian Cuisine,books,194
+8c84a139-aabd-47d6-a5aa-87510a8d5ae9,Set,tools,733
+ba0c2cb6-26b8-488f-81ad-0fa52eb04940,Axe,tools,733
+6c5a41f0-8df6-4279-802e-f06d00c0fb0e,Saw,tools,733
+11c35f7b-ae6f-4291-92a0-0741ce3bdbb0,Drill,tools,733
+56e24d72-d09a-4ec5-8da9-d840c9f4795f,Set,tools,733
+36671dac-7e57-46ee-a00f-99a7224d61d2,Knife,tools,733
+a14039e2-c624-42cd-a9a8-91919953eac8,Set,tools,733
+64759ab3-34a0-4f00-ae1a-1dc68b490774,Drill,tools,733
+277b9636-f9d4-46f7-9910-6a794f478740,Wrench,tools,733
+e9771bb4-cac0-45b4-9e7f-9928ea597e4d,Saw,tools,733
+9530f9fb-ebbe-4da4-9530-d728053c23ca,Cool Glasses,accessories,4734
+f95a0ee3-8ab6-4061-bef2-3578c6b5b7f0,Black Backpack,accessories,4734
+b3ac3191-20ee-491c-8a24-42e0889152ef,Toothbrush,beauty,4734
+b87da3f8-9a3e-417d-abd7-16329c5be1ba,Luxurious Soap,beauty,4734
+83095a08-2968-4275-a375-4fab404df7ac,Razor,beauty,4734
+fe96a096-a0b6-4b20-a332-e11db6c0c7b0,Soft Towel,beauty,4734
+90946422-31ea-4dd1-8651-a9e3a122bcf6,Dark Slate Gray Backpack,accessories,4734
+01b24cde-af53-4629-b7f0-0965f795b870,Sienna Backpack,accessories,4734
+62206a61-b821-47ea-be0c-c4fbf57e091e,Visit Mexico,books,4734
+5858c342-2d79-4abe-91b4-d794c16b96d1,Nice Towel,beauty,4734
+a74abb1e-026e-43ea-a5ba-233cdd114637,Groovy Bracelet,jewelry,965
+e0667c61-6f47-4481-a0a0-beaf734e477a,Nail Varnish for Conquerors of Hearts,beauty,965
+2056c1e4-773f-4765-82e0-dedf83eefb10,Dapper Necklace,jewelry,965
+b87da3f8-9a3e-417d-abd7-16329c5be1ba,Luxurious Soap,beauty,965
+ab228b40-f692-4662-9986-6d8184dda20b,Beauty Balm,beauty,965
+692ce7b7-54ec-422e-b40f-cd9967475263,Lip Balm,beauty,965
+b41f8f1f-3874-4fa9-8a6e-d9b65a2902df,Swell Bracelet,jewelry,965
+c4a3ded4-0004-49dd-9f98-542bb6d71f2c,Groovy Earrings,jewelry,965
+6d5b3f03-ade6-42f7-969d-acd1f2162332,Razor,beauty,965
+f1458cf0-e8a8-46f8-981a-5e0b74c87e92,dapper Necklace,jewelry,965
+e0667c61-6f47-4481-a0a0-beaf734e477a,Nail Varnish for Conquerors of Hearts,beauty,2681
+7cfd10d1-ff92-4513-b688-0ee179deaaef,Deep Disguise Concealer,beauty,2681
+b87da3f8-9a3e-417d-abd7-16329c5be1ba,Luxurious Soap,beauty,2681
+7d359a18-e81a-450b-beb1-db85aa699629,Intense Matte Lipstick,beauty,2681
+83095a08-2968-4275-a375-4fab404df7ac,Razor,beauty,2681
+ab228b40-f692-4662-9986-6d8184dda20b,Beauty Balm,beauty,2681
+fe96a096-a0b6-4b20-a332-e11db6c0c7b0,Soft Towel,beauty,2681
+5858c342-2d79-4abe-91b4-d794c16b96d1,Nice Towel,beauty,2681
+641f3960-72a7-4e2b-be69-8a7539eb50bb,Lotion,beauty,2681
+03685e08-6d30-4e4e-a85e-9e525894c9ea,Gangster-Girl Lipstick,beauty,2681
+94710642-7b99-4d19-b637-6c445b3e3e1d,Indoor Plant,floral,2546
+2b1a78db-aab8-41e1-b8e4-9582c886124b,Rich Towel,beauty,2546
+e588910b-a9fb-4717-a2c0-5c476505b5d2,Wedding Wreath,floral,2546
+a58cc0a2-d54f-4e5a-85e7-e8c530592b76,Hammer,tools,2546
+600e0db0-302f-49c6-b038-a872442894fb,Drill,tools,2546
+89b22997-f0a4-4846-9683-2d10f65bb45a,Hammer,tools,2546
+d184be83-f8ff-4da0-b4d1-3294a8ff3b22,Mixed Arrangement,floral,2546
+3c9976f4-b16d-4a09-b4e9-4f33da92a7e7,White Plates,housewares,2546
+c9eed2f3-8275-47a6-b485-166162262c70,Beauty Cream,beauty,2546
+47549d7f-6352-4128-8e48-dbb838cd3b4c,Hammer,tools,2546

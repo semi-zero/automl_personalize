@@ -1,13 +1,13 @@
-2023-03-27 13:23:16,978 automl_personalize main.py main set_logger INFO: logger 세팅
-2023-03-27 13:23:16,978 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
-2023-03-27 13:23:16,979 automl_personalize input_data.py input_data read_data INFO: storage/shop_data/interaction_data.csv
-2023-03-27 13:23:17,802 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
-2023-03-27 13:23:17,812 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 587719 행, 13열
-2023-03-27 13:23:17,812 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 58.29MB
-2023-03-27 13:23:18,446 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 23.13MB
-2023-03-27 13:23:18,446 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by 60.3%
-2023-03-27 13:23:18,446 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 확인
-2023-03-27 13:23:18,447 automl_personalize preprocess.py preprocess na_preprocess ERROR: 결측치 처리에 문제가 발생하였습니다
+2023-03-27 17:13:17,891 automl_personalize main.py main set_logger INFO: logger 세팅
+2023-03-27 17:13:17,892 automl_personalize input_data.py input_data read_data INFO: csv 데이터 불러오기
+2023-03-27 17:13:17,892 automl_personalize input_data.py input_data read_data INFO: storage/shop_data/interaction_data.csv
+2023-03-27 17:13:18,693 automl_personalize input_data.py input_data read_data INFO: 변수 분리 시작
+2023-03-27 17:13:18,706 automl_personalize input_data.py input_data reduce_mem_usage INFO: 데이터 구성: 587719 행, 13열
+2023-03-27 17:13:18,706 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage of dataframe is 58.29MB
+2023-03-27 17:13:19,248 automl_personalize input_data.py input_data reduce_mem_usage INFO: Memory usage after optimization is: 23.13MB
+2023-03-27 17:13:19,248 automl_personalize input_data.py input_data reduce_mem_usage INFO: Decreased by 60.3%
+2023-03-27 17:13:19,249 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 확인
+2023-03-27 17:13:19,250 automl_personalize preprocess.py preprocess na_preprocess ERROR: 결측치 처리에 문제가 발생하였습니다
 Traceback (most recent call last):
   File "C:\Users\LDCC\Desktop\eco_code\automl_personalize\process\preprocess.py", line 35, in na_preprocess
     df.fillna('NaN', inplace=True)
@@ -28,11 +28,11 @@ Traceback (most recent call last):
   File "C:\Users\LDCC\anaconda3\envs\practice\lib\site-packages\pandas\core\arrays\categorical.py", line 2045, in _validate_setitem_value
     "Cannot setitem on a Categorical with a new "
 ValueError: Cannot setitem on a Categorical with a new category, set the categories first
-2023-03-27 13:23:18,454 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 처리 이후 데이터 구성: 587719 행, 13열
-2023-03-27 13:23:19,019 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
-2023-03-27 13:23:19,020 automl_personalize preprocess.py preprocess get_per_df INFO: 
+2023-03-27 17:13:19,257 automl_personalize preprocess.py preprocess na_preprocess INFO: 결측치 처리 이후 데이터 구성: 587719 행, 13열
+2023-03-27 17:13:19,769 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-27 17:13:19,769 automl_personalize preprocess.py preprocess get_per_df INFO: 
 
-2023-03-27 13:23:19,020 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
+2023-03-27 17:13:19,769 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
 0  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 1  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 2  dc073623-4b95-47d9-93cb-0171c20baa04     332       View   
@@ -59,10 +59,10 @@ ValueError: Cannot setitem on a Categorical with a new category, set the categor
 2  132.0  
 3  132.0  
 4  210.0  
-2023-03-27 13:23:19,220 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
-2023-03-27 13:23:19,220 automl_personalize preprocess.py preprocess get_per_df INFO: 
+2023-03-27 17:13:19,956 automl_personalize preprocess.py preprocess get_per_df INFO: 전처리 완료
+2023-03-27 17:13:19,956 automl_personalize preprocess.py preprocess get_per_df INFO: 
 
-2023-03-27 13:23:19,220 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
+2023-03-27 17:13:19,957 automl_personalize preprocess.py preprocess get_per_df INFO:                                 ITEM_ID USER_ID EVENT_TYPE  \
 0  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 1  26bb732f-9159-432f-91ef-bad14fedd298    3156       View   
 2  dc073623-4b95-47d9-93cb-0171c20baa04     332       View   
@@ -89,5 +89,6 @@ ValueError: Cannot setitem on a Categorical with a new category, set the categor
 2  132.0  
 3  132.0  
 4  210.0  
-2023-03-27 13:44:17,778 automl_personalize modeling.py modeling make_report INFO: 학습 결과를 위한 결과물 생성
-2023-03-27 13:44:17,781 automl_personalize modeling.py modeling get_eval INFO: best 모델 검증
+2023-03-27 17:13:20,037 automl_personalize modeling.py modeling svd_fit_predict INFO: svd 모델 fitting
+2023-03-27 17:15:59,684 automl_personalize modeling.py modeling make_report INFO: 학습 결과를 위한 결과물 생성
+2023-03-27 17:15:59,687 automl_personalize modeling.py modeling get_eval INFO: best 모델 검증

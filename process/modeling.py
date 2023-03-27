@@ -54,10 +54,10 @@ class Modeling:
         self.score['RMSE']                      = dict()
         self.score['MAE']                       = dict()
         
+        self.pop_process()
         
         #모델링 딕셔너리
         model_type_dict = {'svd'  : self.svd_process(),
-                           'pop'  : self.pop_process(),
                            'auto'  : self.auto_process()}
         
        
@@ -68,8 +68,7 @@ class Modeling:
         
         #2. 학습 결과 비교 화면
         #3. 변수 중요도
-        self.test_score, self.valid_score, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df)
-        
+        self.test_score, self.valid_score, self.user_item_dfs, self.recommend_dfs, self.random_user_item_dfs, self.random_recommend_dfs, self.pop_recommend_df = self.get_eval(self.accuracy_df, self.user_item_dfs, self.recommend_dfs, self.pop_recommend_df, self.model_type)
         
         
         #################### SVD START####################
@@ -310,7 +309,7 @@ class Modeling:
             recommend_dfs.reset_index(drop=True, inplace=True)
             return accuracy_df, user_item_dfs, recommend_dfs
         
-        self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(user_df, item_df, interaction_df, num = 10) 
+        self.accuracy_df, self.user_item_dfs, self.recommend_dfs = perf_metric(user_df, item_df, interaction_df, num) 
 
         self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
         self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
@@ -346,7 +345,7 @@ class Modeling:
             
         return report
     
-    def get_eval(self, accuracy_df, user_item_dfs, recommend_dfs, pop_recommend_df):
+    def get_eval(self, accuracy_df, user_item_dfs, recommend_dfs, pop_recommend_df, model_type):
         
         self.logger.info('best 모델 검증')
         
@@ -358,11 +357,27 @@ class Modeling:
                                        
         except:
             self.logger.exception('best 모델 검증에 실패했습니다')
-       
-        valid_score = pd.DataFrame(self.score)
-        valid_score = valid_score[['RMSE','MAE']]
-        valid_score.reset_index(inplace=True)
-        valid_score.to_csv('storage/vald.csv', index=False)
+        
+        if model_type == 'auto':
+            valid_score = pd.DataFrame(self.score)
+            valid_score = valid_score[['RMSE','MAE']]
+            valid_score.reset_index(inplace=True)
+            valid_score.to_csv('storage/valid.csv', index=False)
+            
+        else:
+            valid_score = pd.DataFrame(self.score)
+            valid_score.to_csv('storage/valid.csv', index=False)
+        
+        test_score.to_csv('storage/test_score.csv', index=False)
+        
+        #학습 결과 화면을 위한 랜덤 아이템 추출
+        random_list = np.random.choice(recommend_dfs[self.user_id_var].unique(), 10)
+        
+        random_recommend_dfs = recommend_dfs[recommend_dfs[self.user_id_var].isin(random_list)].reset_index(drop=True)
+        random_user_item_dfs = user_item_dfs[user_item_dfs[self.user_id_var].isin(random_list)].reset_index(drop=True)
+        
+        random_recommend_dfs.to_csv('storage/random_recommend_dfs.csv', index=False)
+        random_user_item_dfs.to_csv('storage/random_user_item_dfs.csv', index=False)
     
         
-        return test_score, valid_score, user_item_dfs, recommend_dfs, pop_recommend_df
+        return test_score, valid_score, user_item_dfs, recommend_dfs, random_user_item_dfs, random_recommend_dfs, pop_recommend_df
