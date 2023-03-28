@@ -167,6 +167,7 @@ class Modeling:
         
         self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
         self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
+        self.score['학습 모델']              = '사용자-상품 연계 기반 추천'
         
         print(self.score)
         self.user_item_dfs.to_csv('storage/user_item_dfs.csv', index=False)
@@ -201,8 +202,10 @@ class Modeling:
             pop_df['weight'] = pop_df['score'].apply(math.exp)
 
             pop_list = pop_df.sample(n=num, weights='weight')[item_id_var].tolist()
+            
 
         self.pop_recommend_df = item_df[item_df[item_id_var].isin(pop_list)]
+        self.pop_recommend_df.reset_index(drop=True, inplace=True)
         self.pop_recommend_df.to_csv('storage/pop_recommend_df.csv', index=False)
        
             
@@ -226,9 +229,9 @@ class Modeling:
         df = Dataset.load_from_df(interaction_df[[user_id_var, item_id_var, event]], reader = reader)
         train, test = train_test_split(df, test_size = 0.2, random_state=42)
 
-        algorithms = {'item_based': KNNWithMeans(sim_options = {"user_based": False}),
-                      'user_based': KNNWithMeans(sim_options = {"user_based": True}),
-                      'CF': SVD()}
+        algorithms = {'상품 기반 추천': KNNWithMeans(sim_options = {"user_based": False}),
+                      '사용자 기반 추천': KNNWithMeans(sim_options = {"user_based": True}),
+                      '사용자-상품 연계 기반 추천': SVD()}
 
                     
         for algo_name, algo in zip(algorithms.keys(), algorithms.values()):
@@ -313,6 +316,7 @@ class Modeling:
 
         self.score[f'Precision@{self.num}']  = np.round(np.mean(self.accuracy_df[f'precision@{num}']),3)
         self.score[f'Recall@{self.num}']     = np.round(np.mean(self.accuracy_df[f'recall@{num}']),3)
+        self.score['학습 모델']              = best_model_name
         
         
         print(self.score)
@@ -351,8 +355,10 @@ class Modeling:
         
         try:
             
-            test_score = pd.DataFrame({f'Precision@{self.num}' : [ self.score[f'Precision@{self.num}'] ],
-                                       f'Recall@{self.num}'    : [ self.score[f'Recall@{self.num}']]})
+            test_score = pd.DataFrame({'학습 모델' : [self.score['학습 모델']],
+                                    f'Precision@{self.num}' : [ self.score[f'Precision@{self.num}'] ],
+                                    f'Recall@{self.num}'    : [ self.score[f'Recall@{self.num}']]
+                                      })
         
                                        
         except:
