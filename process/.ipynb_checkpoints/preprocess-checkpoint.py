@@ -19,27 +19,8 @@ class Preprocessing:
         self.item_var = item_var
         self.logger = logging.getLogger(log_name)
         
-        #결측치 처리 먼저 진행
-        self.df = self.na_preprocess(self.df)
         
         self.df, self.user_df, self.item_df, self.interaction_df = self.get_per_df()
-        
-        
-        
-        # 결측치 확인 및 처리
-    def na_preprocess(self, df):
-        
-        self.logger.info('결측치 확인')        
-        
-        try:
-            df.fillna('NaN', inplace=True)
-
-        except:
-            self.logger.exception('결측치 처리에 문제가 발생하였습니다')
-            
-        self.logger.info(f'결측치 처리 이후 데이터 구성: {df.shape[0]} 행, {df.shape[1]}열')                  
-        
-        return df
     
     
     def get_per_df(self):

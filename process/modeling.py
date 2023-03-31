@@ -22,6 +22,7 @@ import joblib
 import json
 import glob
 import logging
+import gc
 
 #surprise
 from surprise import SVD, accuracy, SVDpp, KNNWithMeans, BaselineOnly
@@ -156,6 +157,9 @@ class Modeling:
                 recommend_df = recommend_df.copy()
                 recommend_df.loc[:, user_id_var] = USER_ID
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
+                
+                gc.collect()
+                
             accuracy_df = pd.DataFrame(dict_list)
             user_item_dfs.reset_index(drop=True, inplace=True)
             recommend_dfs.reset_index(drop=True, inplace=True)
@@ -240,6 +244,8 @@ class Modeling:
             self.score['RMSE'][algo_name] = np.round(accuracy.rmse(predictions) , 3)
             self.score['MAE'][algo_name] = np.round(accuracy.mae(predictions) , 3)
             self.model[algo_name] = algo
+            
+            gc.collect()
         
         best_model_name = min(self.score['RMSE'], key = self.score['RMSE'].get)
         best_model = self.model[best_model_name]
@@ -274,7 +280,7 @@ class Modeling:
             #지표 산정
             precision = len(intersect(user_item_list, recommend_total_list))/ len(recommend_total_list)
             recall = len(intersect(user_item_list, recommend_total_list)) / len(user_item_list)
-
+            
             return precision, recall, user_item_df, recommend_df
 
 
@@ -306,6 +312,8 @@ class Modeling:
                 recommend_df = recommend_df.copy()
                 recommend_df.loc[:, user_id_var] = USER_ID
                 recommend_dfs = pd.concat([recommend_dfs, recommend_df], axis=0)
+                
+                gc.collect()
             accuracy_df = pd.DataFrame(dict_list)
             
             user_item_dfs.reset_index(drop=True, inplace=True)
@@ -371,7 +379,7 @@ class Modeling:
             valid_score.to_csv('storage/valid.csv', index=False)
             
         else:
-            valid_score = pd.DataFrame(self.score)
+            valid_score = test_score
             valid_score.to_csv('storage/valid.csv', index=False)
         
         test_score.to_csv('storage/test_score.csv', index=False)

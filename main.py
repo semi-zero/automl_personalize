@@ -5,7 +5,7 @@ import random
 import os
 import numpy as np
 from loggers import logger
-from process import input_data, preprocess, modeling
+from process import input_data, preprocess, modeling, check_reduce
 
 # 1. parser 객체 생성
 parser = argparse.ArgumentParser(description='Click & Select')
@@ -51,8 +51,10 @@ if __name__ == "__main__":
     #해당 과정(personalize)에서는 딱히 var_list, num_var, obj_var를 받을 필요는 없으나,
     #기존 코드와의 통일성을 위해 그대로 받을 예정
     data, var_list, num_var, obj_var = input_data.Data_load(args.PATH, log_name).read_data()
-    df, user_df, item_df, interaction_df = preprocess.Preprocessing(log_name, data, args.item_id_var, args.user_id_var, args.event, args.user_var, args.item_var).get_per_df()
-    mm = modeling.Modeling(log_name, df, user_df, item_df, interaction_df, args.item_id_var, args.user_id_var, args.event, args.num, args.model_type)
+    check = check_reduce.Data_check_reduce(log_name, data, args.item_id_var, args.user_id_var, args.event).check
+    if check == True:
+        df, user_df, item_df, interaction_df = preprocess.Preprocessing(log_name, data, args.item_id_var, args.user_id_var, args.event, args.user_var, args.item_var).get_per_df()
+        mm = modeling.Modeling(log_name, df, user_df, item_df, interaction_df, args.item_id_var, args.user_id_var, args.event, args.num, args.model_type)
     
     
     # 입력 예시
